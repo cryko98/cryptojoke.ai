@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto Joke AI 🤖</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff8800, #ffcc00);
+      color: #222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      padding: 50px;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .chat-box {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      display: inline-block;
+      max-width: 500px;
+      width: 90%;
+      margin-top: 50px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    button {
+      background-color: #ff8800;
+      color: white;
+      padding: 12px 24px;
+      margin-top: 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #e67600;
+    }
+    #response {
+      margin-top: 25px;
+      font-size: 18px;
+      min-height: 50px;
+      line-height: 1.4;
+    }
+    .ca-text {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #444;
+      opacity: 0.8;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="chat-box">
+    <h1>Crypto Joke AI 🤖</h1>
+    <p>Type a message and get a crypto joke!</p>
+    <input type="text" id="userInput" placeholder="Ask something...">
+    <br>
+    <button onclick="generateJoke()">Send</button>
+    <div id="response"></div>
+  </div>
+
+  <div class="ca-text">
+    ca: xyxyxyxyxyxyxyxyxyxyxyxyxyxyx
+  </div>
+
+  <script>
+    const jokes = [
+      "Why don't Bitcoin traders cry? Because they have no tears left!",
+      "Are you an Ethereum developer? Because you just raised my gas fees!",
+      "What do you call a bad crypto trader? A Bit-loser!",
+      "When will Bitcoin hit 1 million dollars? When the dollar hits zero!",
+      "What's an Ethereum developer's favorite dessert? Smart contract cake!",
+      "Dogecoin: making the crypto world weird since 2013.",
+      "What do you call a crypto vampire? Count Bitcoin-ula!",
+      "Why doesn’t the crypto guy go to the gym? Because his gains are virtual!",
+      "How did the crypto investor lose everything? Forgot his wallet password!",
+      "Blockchain: where jokes are decentralized!"
+    ];
+
+    function generateJoke() {
+      const userInput = document.getElementById('userInput').value;
+      const responseDiv = document.getElementById('response');
+
+      if (userInput.trim() === "") {
+        responseDiv.innerHTML = "Please type something so I can respond!";
+        return;
+      }
+
+      responseDiv.innerHTML = "Thinking... 🤔";
+
+      setTimeout(() => {
+        const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+        responseDiv.innerHTML = randomJoke;
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
